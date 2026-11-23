@@ -5,6 +5,7 @@ public class OnoHandler : MonoBehaviour
 {
     public string onomatope;
     public GameObject PopVFX;
+    public AudioClip audioClip;
     public TMP_Text text;
     public float returnSpeed = 1;
     public Image visual;
@@ -14,12 +15,14 @@ public class OnoHandler : MonoBehaviour
     private Vector2 initialPosition;
     private bool isSelected;
     private Vector2 currentPosition;
+    private AudioSource audioSource;
     private RectTransform rect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rect = GetComponent<RectTransform>();
         detectionImage = GetComponent<Image>();
+        audioSource = GetComponent<AudioSource>();
         if (text.gameObject.activeInHierarchy)
         {
             text.text = onomatope; 
@@ -32,6 +35,15 @@ public class OnoHandler : MonoBehaviour
         detectionImage.raycastTarget = false;
         visual.sprite = selected;
         isSelected = true;
+        //if (audioSource != null && audioClip != null)
+        //{
+        //    audioSource.clip = audioClip;
+        //    audioSource.Play(); 
+        //}
+        //else
+        //{
+        //    Debug.Log("No Audio Source or Audio Clip.");
+        //}
     }
 
     public void OnDeselected(bool returnToNormal)

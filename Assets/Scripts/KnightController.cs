@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Rendering.DebugUI;
@@ -18,6 +19,7 @@ public class KnightController : MonoBehaviour, IInteractable
     private bool isNearExit = false;
     private bool isFacingRight = true;
     private Rigidbody rb;
+    private AudioHandler audioHandler;
     #endregion
 
     private void Awake()
@@ -26,6 +28,7 @@ public class KnightController : MonoBehaviour, IInteractable
         isNearExit = false;
         isFacingRight = true;
         rb = GetComponent<Rigidbody>();
+        audioHandler = GetComponent<AudioHandler>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -107,7 +110,7 @@ public class KnightController : MonoBehaviour, IInteractable
             destination = transform.position + (WalkUnit * (isFacingRight ? 1 : -1) * Vector3.forward);
             canWalk = true;
             animator.SetTrigger(WALK);
-
+            audioHandler.PlayAudio(OnoType.TOKOTOKO);
         }
     }
 

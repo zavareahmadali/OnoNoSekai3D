@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-public class Onos
+public class Onos : MonoBehaviour
 {
     public static string KOROKORO = "コロコロ";
     public static string GOROGORO = "ゴロゴロ";
@@ -12,6 +13,7 @@ public class Onos
     public static string TOKOTOKO = "トコトコ";
     
 }
+[Serializable]
 public enum OnoType
 {
     KOROKORO,

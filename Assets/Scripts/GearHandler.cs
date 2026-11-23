@@ -3,11 +3,19 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class GearHandler : MonoBehaviour, IInteractable
 {
+
+
+    #region Variable Declaration
     public bool isHeavy;
     public GameObject Bridge;
+
+    [Header("Small Gear")]
     public float normalSpeed = 1;
+
+    [Header("Big Gear")]
     public float highSpeed = 3;
 
+    [Header("Other Settings")]
     public float duration;
     public bool oneTimeActivation = true;
     internal bool isActive = false;
@@ -15,11 +23,16 @@ public class GearHandler : MonoBehaviour, IInteractable
     private Vector3 rotationVector = -Vector3.forward;
     private float timer;
     private IActivatable bridgeinterface;
-    //Active for a duration?
+    private AudioHandler audioHandler;
+
+    #endregion
+
+
     void Awake()
     {
         isActive = false;
         timer = duration;
+        audioHandler = GetComponent<AudioHandler>();
         if (Bridge != null)
         {
             bridgeinterface = Bridge.GetComponent<IActivatable>();
@@ -57,6 +70,7 @@ public class GearHandler : MonoBehaviour, IInteractable
                 timer = duration;
                 isActive = true;
                 bridgeinterface.Activate<float>(1);
+                audioHandler.PlayAudio(OnoType.KURUKURU);
             }
             else
             {
@@ -71,7 +85,8 @@ public class GearHandler : MonoBehaviour, IInteractable
                 currentSpeed = highSpeed;
                 timer = duration;
                 isActive = true;
-                bridgeinterface.Activate<float>(Mathf.Clamp(highSpeed/normalSpeed, 1, 1.2f)); 
+                bridgeinterface.Activate<float>(Mathf.Clamp(highSpeed/normalSpeed, 1, 1.2f));
+                audioHandler.PlayAudio(OnoType.GURUGURU);
             }
             else
             {

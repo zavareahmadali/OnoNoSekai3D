@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1865820907584299413}
   - component: {fileID: 7965690366311719390}
   - component: {fileID: 944446552514911457}
+  - component: {fileID: 7461818815355821667}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -186,6 +187,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineHandler
   targetRenderer: {fileID: 538611750008000557}
+--- !u!114 &7461818815355821667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753345763427966652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5996263f8afb58344a12e5fa3213bd61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioHandler
+  onoAudios:
+  - key: 7
+    value: {fileID: 8300000, guid: bf464b4e76b6d724aa7fdb740651a740, type: 3}
 --- !u!1001 &429119477416139423
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -458,7 +458,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181896592}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.82
@@ -510,7 +510,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -1670,7 +1670,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362628091}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 2
   m_Color: {r: 1, g: 0.9541497, b: 0.5503144, a: 1}
   m_Intensity: 0.63
@@ -1722,7 +1722,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -1923,14 +1923,6 @@ PrefabInstance:
       propertyPath: Bridge
       value: 
       objectReference: {fileID: 5561665}
-    - target: {fileID: 8968110426061903541, guid: 24ca647e8ff372c45819c2ad9de4f965, type: 3}
-      propertyPath: isHeavy
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8968110426061903541, guid: 24ca647e8ff372c45819c2ad9de4f965, type: 3}
-      propertyPath: duration
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

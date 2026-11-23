@@ -1,17 +1,30 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LightHandler : MonoBehaviour, IInteractable
 {
-    public Light normalLight;
-    public ParticleSystem normalLightParticles;
-    public Light highLight;
-    public ParticleSystem highLightParticles;
-    public float KiraKiraClearRadius = 2;
-    public float GiraGiraClearRadius = 5;
-    public Transform DetectionOrigin;
-    public LayerMask DarkSpaceLayer;
-    public bool showGizmos;
+    [Header("キラキラ")]
+    [SerializeField] private Light normalLight;
+    [SerializeField] private ParticleSystem normalLightParticles;
+    [SerializeField] private float KiraKiraClearRadius = 2;
 
+    [Header("ギラギラ")]
+    [SerializeField] private Light highLight;
+    [SerializeField] private ParticleSystem highLightParticles;
+    [SerializeField] private float GiraGiraClearRadius = 5;
+
+    [Header("Other Settings")]
+    [SerializeField] private Transform DetectionOrigin;
+    [SerializeField] private LayerMask DarkSpaceLayer;
+    [SerializeField] private bool showGizmos;
+
+    private AudioHandler audioHandler;
+    
+    private void Awake()
+    {
+        audioHandler = GetComponent<AudioHandler>();
+    }
+    
     public void Interact(string ono)
     {
         if (ono == Onos.KIRAKIRA)
@@ -20,6 +33,7 @@ public class LightHandler : MonoBehaviour, IInteractable
             normalLight.enabled = true;
             normalLightParticles.gameObject.SetActive(true);
             highLightParticles.gameObject.SetActive(false);
+            audioHandler.PlayAudio(OnoType.KIRAKIRA);
         }
         else if (ono == Onos.GIRAGIRA)
         {
@@ -27,6 +41,7 @@ public class LightHandler : MonoBehaviour, IInteractable
             highLight.enabled = true;
             normalLightParticles.gameObject.SetActive(false);
             highLightParticles.gameObject.SetActive(true);
+            audioHandler.PlayAudio(OnoType.GIRAGIRA);
         }
 
         //Collider[] objectsInside = Physics.OverlapBox(transform.position, new Vector3(2, 2, (ono == Onos.GIRAGIRA)? GiraGiraClearRadius : KiraKiraClearRadius) * 0.5f, Quaternion.identity);

@@ -8,6 +8,7 @@ public class MeltableHandler : MonoBehaviour, IActivatable
     public float targetMeltParam;
     public Renderer renderer;
     private Material material;
+    
     private Collider objectCollider;
     private const string MELTPARAM = "_MeltingHeight";
     void Start()
@@ -21,6 +22,7 @@ public class MeltableHandler : MonoBehaviour, IActivatable
         Debug.Log("Activate called with value: " + value);
         if (value.ToString() == Onos.GIRAGIRA)
         {
+            GetComponent<AudioSource>().Play();
             StartCoroutine(MeltCoroutine());
         }
         

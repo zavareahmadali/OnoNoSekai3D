@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8968110426061903541}
   - component: {fileID: 3603890503846904240}
   - component: {fileID: 9085403445358405381}
+  - component: {fileID: 3994941800664245195}
   m_Layer: 0
   m_Name: Gear
   m_TagString: Untagged
@@ -69,10 +70,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0926c92d687d75442a6a1402ff073617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  isHeavy: 1
   Bridge: {fileID: 0}
   normalSpeed: 0.25
   highSpeed: 1
-  duration: 2
+  duration: 1
   oneTimeActivation: 1
 --- !u!95 &3603890503846904240
 Animator:
@@ -109,6 +111,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OutlineHandler
   targetRenderer: {fileID: 3559449805772460099}
+--- !u!114 &3994941800664245195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048919046175776936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5996263f8afb58344a12e5fa3213bd61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  onoAudios:
+  - key: 4
+    value: {fileID: 8300000, guid: acdff48f4bc777b4ba72d55304b803b3, type: 3}
+  - key: 5
+    value: {fileID: 8300000, guid: 5fdb9c933d0e766469c494c2ca329d8a, type: 3}
 --- !u!1 &2856690078102022776
 GameObject:
   m_ObjectHideFlags: 0
