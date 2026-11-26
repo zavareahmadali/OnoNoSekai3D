@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -24,7 +25,7 @@ public class GearHandler : MonoBehaviour, IInteractable
     private float timer;
     private IActivatable bridgeinterface;
     private AudioHandler audioHandler;
-
+    private Animator animator;
     #endregion
 
 
@@ -33,6 +34,8 @@ public class GearHandler : MonoBehaviour, IInteractable
         isActive = false;
         timer = duration;
         audioHandler = GetComponent<AudioHandler>();
+        animator = GetComponent<Animator>();
+        animator.SetBool("isHeavyGear", isHeavy);
         if (Bridge != null)
         {
             bridgeinterface = Bridge.GetComponent<IActivatable>();
@@ -75,6 +78,8 @@ public class GearHandler : MonoBehaviour, IInteractable
             else
             {
                 //We should show that the gear doesn't rotate because the speed is too low
+                animator.SetTrigger("Fail");
+                
             }
         }
         else if (ono == Onos.GURUGURU)
@@ -91,7 +96,11 @@ public class GearHandler : MonoBehaviour, IInteractable
             else
             {
                 //We Should Show that the gear is destroyed because it's too light
+                Debug.Log("Small Gear Failed!");
+                animator.SetTrigger("Fail");
+                GameStateHandler.LevelFailed();
             }
         }
     }
+
 }

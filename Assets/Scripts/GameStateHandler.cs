@@ -7,12 +7,15 @@ public class GameStateHandler : MonoBehaviour
 {
     public float delayBeforeLoadingTheScene;
     public static Action OnPuzzleSolved;
+    public static Action OnPuzzleFailed;
     private static GameStateHandler instance;
+    public static bool isPuzzleFailed;
     [SerializeField]
     public UnityEditor.SceneAsset nextSceneAsset;
     private void Awake()
     {
         instance = this;
+        isPuzzleFailed = false;
         if (nextSceneAsset == null)
             Debug.Log("Check the nextScene parameter.", this.gameObject);
 
@@ -38,5 +41,11 @@ public class GameStateHandler : MonoBehaviour
     public static void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+
+    public static void LevelFailed()
+    {
+        isPuzzleFailed = true;
+        OnPuzzleFailed?.Invoke();
     }
 }

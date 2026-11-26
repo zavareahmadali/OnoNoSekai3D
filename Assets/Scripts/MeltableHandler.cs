@@ -17,6 +17,7 @@ public class MeltableHandler : MonoBehaviour, IActivatable
         objectCollider = GetComponent<Collider>();
     }
 
+    //We use Activate becuase this can be activated by the GiraGira
     public void Activate<T>(T value)
     {
         Debug.Log("Activate called with value: " + value);
@@ -30,8 +31,7 @@ public class MeltableHandler : MonoBehaviour, IActivatable
 
     public void Deactivate<T>(T value)
     {
-        Debug.Log("Deactivate called with value: " + value);
-        //material.SetFloat("_MeltAmount", 0f);
+        
     }
 
     IEnumerator MeltCoroutine()
@@ -46,4 +46,5 @@ public class MeltableHandler : MonoBehaviour, IActivatable
         objectCollider.enabled = false; // Disable the collider after melting
         yield return null;
     }
+
 }
