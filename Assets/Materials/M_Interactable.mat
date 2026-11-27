@@ -64,5 +64,6 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 19.69831, g: 10.88354, b: 0, a: 0}
+    - _Stripe_Color: {r: 19.69831, g: 10.88354, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

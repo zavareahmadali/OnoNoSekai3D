@@ -6,6 +6,12 @@ public class GearHandler : MonoBehaviour, IInteractable
     public bool isHeavy;
     public GameObject Bridge;
     public float normalSpeed = 1;
+<<<<<<< Updated upstream
+=======
+    [SerializeField] private GameObject smallGearFailVFX;
+
+    [Header("Big Gear")]
+>>>>>>> Stashed changes
     public float highSpeed = 3;
 
     public float duration;
@@ -76,7 +82,27 @@ public class GearHandler : MonoBehaviour, IInteractable
             else
             {
                 //We Should Show that the gear is destroyed because it's too light
+<<<<<<< Updated upstream
             }
         }
     }
+=======
+                
+                animator.SetTrigger("Fail");
+                if (isActive)
+                {
+                    GameStateHandler.LevelFailed();
+                }
+                
+            }
+        }
+    }
+
+    public void ShowFailVFX()
+    {
+        GameObject go = Instantiate(smallGearFailVFX, transform.position, smallGearFailVFX.transform.rotation);
+        Destroy(go, 3);
+    }
+
+>>>>>>> Stashed changes
 }

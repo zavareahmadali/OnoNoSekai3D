@@ -1850,6 +1850,14 @@ PrefabInstance:
       propertyPath: isHeavy
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8968110426061903541, guid: 24ca647e8ff372c45819c2ad9de4f965, type: 3}
+      propertyPath: normalSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968110426061903541, guid: 24ca647e8ff372c45819c2ad9de4f965, type: 3}
+      propertyPath: smallGearFailVFX
+      value: 
+      objectReference: {fileID: 2263400886593003554, guid: c3673c20344286448be75962a1518edb, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
