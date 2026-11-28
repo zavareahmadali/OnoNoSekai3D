@@ -34,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7045788728104395441}
   - {fileID: 2366405946246500561}
+  - {fileID: 6248468250797815008}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8530385703205017224
@@ -48,6 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d2f718e39f4304eb6daccb4f9c911d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  notBreakingValue: 1
+  isFragile: 1
+  fracturuedBridge: {fileID: 2181068328643896766, guid: 38587fe6b51fa7046a905c7c5a13ca7f, type: 3}
+  visual: {fileID: 8783213819820857474}
 --- !u!95 &7625200110863585336
 Animator:
   serializedVersion: 7
@@ -144,6 +149,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.604395, y: 5.0515013, z: 0.45779514}
   m_Center: {x: -0.2349863, y: 2.0257506, z: -7.767077}
+--- !u!1 &8093299658791630125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6248468250797815008}
+  m_Layer: 0
+  m_Name: FracturuedBrdigeSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6248468250797815008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093299658791630125}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.26525497, y: -0.21986035, z: -4.5645113}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8417000564931557260}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8783213819820857474
 GameObject:
   m_ObjectHideFlags: 0

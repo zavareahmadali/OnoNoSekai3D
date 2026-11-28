@@ -451,6 +451,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8530385703205017224, guid: 3f33a9d5b3d444e409cd051825c67a56, type: 3}
+      propertyPath: fracturuedBridgeSpawnPoint
+      value: 
+      objectReference: {fileID: 1884069579}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2040,6 +2044,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ee9fba68ec9a5ea419fe7cbe84bb8513, type: 3}
   m_PrefabInstance: {fileID: 971478976}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1884069579 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6248468250797815008, guid: 3f33a9d5b3d444e409cd051825c67a56, type: 3}
+  m_PrefabInstance: {fileID: 211226178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1921640254 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7144e5f7af21ff644b9f6e915f00a2c7, type: 3}
@@ -2321,6 +2330,10 @@ PrefabInstance:
       propertyPath: 'NewlyIntroducedOno.Array.data[1]'
       value: 
       objectReference: {fileID: 2221109572981358173}
+    - target: {fileID: 5891116588465838954, guid: 7c058de931b217344af85e0c588e1172, type: 3}
+      propertyPath: delay
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6595503734720767772, guid: 7c058de931b217344af85e0c588e1172, type: 3}
       propertyPath: m_fontAsset
       value: 

@@ -20,7 +20,8 @@ public class GearHandler : MonoBehaviour, IInteractable
     private IActivatable bridgeinterface;
     private Animator animator;
     private readonly string FAILED = "Failed";
-    //Active for a duration?
+
+
     void Awake()
     {
         isActive = false;
@@ -81,9 +82,14 @@ public class GearHandler : MonoBehaviour, IInteractable
             }
             else
             {
+                //bridgeinterface.Activate<float>(Mathf.Clamp(highSpeed / normalSpeed, 1, 1.2f));
+                //RetractableBridgeHandler retractable = bridgeinterface as RetractableBridgeHandler;
+                //retractable.SetShouldBreak();
+
                 animator.SetTrigger(FAILED);
                 if (!isActive)
                 {
+                    Debug.Log("here?");
                     GameStateHandler.LevelFailed();
                 }
 
