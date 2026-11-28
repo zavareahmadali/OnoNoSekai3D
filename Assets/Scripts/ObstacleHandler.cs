@@ -1,10 +1,5 @@
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.DualShock.LowLevel;
 using UnityEngine.Splines;
-using UnityEngine.VFX;
 
 public class ObstacleHandler : MonoBehaviour, IInteractable
 {

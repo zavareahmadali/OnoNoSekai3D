@@ -84,6 +84,8 @@ public class DragAndDropHandler : MonoBehaviour
     
     private void ClickAction_performed(InputAction.CallbackContext obj)
     {
+        if (GameStateHandler.GetIsGameOver())
+            return;
 
         PointerEventData pointerData = new PointerEventData(eventSystem);
         pointerData.position = Mouse.current.position.value;

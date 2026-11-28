@@ -1790,6 +1790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gear
       objectReference: {fileID: 0}
+    - target: {fileID: 3603890503846904240, guid: 24ca647e8ff372c45819c2ad9de4f965, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cce5207408d0a9d45a2e2009dbc1a69c, type: 2}
     - target: {fileID: 6041828369744619215, guid: 24ca647e8ff372c45819c2ad9de4f965, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.74354583
@@ -2317,6 +2321,18 @@ PrefabInstance:
       propertyPath: 'NewlyIntroducedOno.Array.data[1]'
       value: 
       objectReference: {fileID: 2221109572981358173}
+    - target: {fileID: 6595503734720767772, guid: 7c058de931b217344af85e0c588e1172, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6595503734720767772, guid: 7c058de931b217344af85e0c588e1172, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6595503734720767772, guid: 7c058de931b217344af85e0c588e1172, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8661617223069161759, guid: 7c058de931b217344af85e0c588e1172, type: 3}
       propertyPath: m_Name
       value: UICanvas

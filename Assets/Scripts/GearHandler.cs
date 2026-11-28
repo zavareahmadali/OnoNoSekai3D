@@ -6,12 +6,9 @@ public class GearHandler : MonoBehaviour, IInteractable
     public bool isHeavy;
     public GameObject Bridge;
     public float normalSpeed = 1;
-<<<<<<< Updated upstream
-=======
     [SerializeField] private GameObject smallGearFailVFX;
 
     [Header("Big Gear")]
->>>>>>> Stashed changes
     public float highSpeed = 3;
 
     public float duration;
@@ -21,11 +18,14 @@ public class GearHandler : MonoBehaviour, IInteractable
     private Vector3 rotationVector = -Vector3.forward;
     private float timer;
     private IActivatable bridgeinterface;
+    private Animator animator;
+    private readonly string FAILED = "Failed";
     //Active for a duration?
     void Awake()
     {
         isActive = false;
         timer = duration;
+        animator = GetComponent<Animator>();
         if (Bridge != null)
         {
             bridgeinterface = Bridge.GetComponent<IActivatable>();
@@ -38,7 +38,7 @@ public class GearHandler : MonoBehaviour, IInteractable
             return;
 
         transform.Rotate(currentSpeed * rotationVector);
-        if (timer==-1)
+        if (timer == -1)
             return;
 
         timer -= Time.deltaTime;
@@ -47,7 +47,7 @@ public class GearHandler : MonoBehaviour, IInteractable
             isActive = false;
             if (!oneTimeActivation)
             {
-                bridgeinterface.Deactivate<float>(0f); 
+                bridgeinterface.Deactivate<float>(0f);
             }
         }
 
@@ -77,26 +77,20 @@ public class GearHandler : MonoBehaviour, IInteractable
                 currentSpeed = highSpeed;
                 timer = duration;
                 isActive = true;
-                bridgeinterface.Activate<float>(Mathf.Clamp(highSpeed/normalSpeed, 1, 1.2f)); 
+                bridgeinterface.Activate<float>(Mathf.Clamp(highSpeed / normalSpeed, 1, 1.2f));
             }
             else
             {
-                //We Should Show that the gear is destroyed because it's too light
-<<<<<<< Updated upstream
-            }
-        }
-    }
-=======
-                
-                animator.SetTrigger("Fail");
-                if (isActive)
+                animator.SetTrigger(FAILED);
+                if (!isActive)
                 {
                     GameStateHandler.LevelFailed();
                 }
-                
+
             }
         }
     }
+
 
     public void ShowFailVFX()
     {
@@ -104,5 +98,4 @@ public class GearHandler : MonoBehaviour, IInteractable
         Destroy(go, 3);
     }
 
->>>>>>> Stashed changes
 }
